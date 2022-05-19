@@ -14,7 +14,6 @@ const CocktailList = (props) => {
       .then(cocktailsData => setcocktails(cocktailsData))
   }, [])
 
-  console.log(cocktailArray)
 
 
   return (
