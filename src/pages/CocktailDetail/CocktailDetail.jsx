@@ -67,27 +67,25 @@ const CocktailDetail = () => {
               <h2>Method: {details.strInstructions}</h2>
               <h2>Served in: {details.strGlass}</h2>
               <h2>Ingredients:</h2>
-              {/* {ingredientsArray ?
+              {ingredientsArray && amountsArray ?
                 <>
-                  {ingredientsArray.map((ingredientArray, idx) => (
+                  {ingredientsArray.map((ingredient, idx) => (
 
-                    true ?
-                      <>
+                  
+                     
                         <div key={idx} >
-                          {ingredientArray}
+                         {amountsArray[idx]} {ingredient}
                         </div>
-                      </>
-                      :
-                      <>
-                      </>
+                      
 
 
                   ))}
                 </>
                 :
                 <>
+                <h2>loading ingredients</h2>
                 </>
-              } */}
+              }
 
 
             </div>
