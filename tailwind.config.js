@@ -10,7 +10,7 @@ module.exports = {
 
       },
       fontFamily:{
-        'main':['"Taviraj"', 'serif']
+        'cocktail-name': ['"MuseoModerno"', 'cursive']
         
       },
       colors: {
@@ -19,6 +19,12 @@ module.exports = {
           200: 'rgb(224,206,206)',
           300: 'rgb(146,123,144)',
           500: 'rgb(87,71,85)'
+        },
+        dark: {
+          100: '#757f9a'
+        },
+        light:{
+          100: '#d7dde8'
         }
       }
     }

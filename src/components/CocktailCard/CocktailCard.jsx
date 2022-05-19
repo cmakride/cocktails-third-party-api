@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom"
 
 const CocktailCard = ({ cocktail }) => {
+  const drinkId = cocktail.idDrink
+
+
   return (
     <>
       <div>
-        <Link to="/cocktail">
+        <Link to="/cocktail" state={{ drinkId }}>
           <img src={cocktail.strDrinkThumb} alt="cocktail" className="w-full h-80 object-cover object-center" />
 
         </Link>
