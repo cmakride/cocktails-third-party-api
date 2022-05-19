@@ -4,7 +4,7 @@ const CocktailCard = ({ cocktail }) => {
   return (
     <>
       <div>
-        <Link to="/cocktail" state={{ cocktail }}>
+        <Link to="/cocktail">
           <img src={cocktail.strDrinkThumb} alt="cocktail" className="w-full h-80 object-cover object-center" />
 
         </Link>
