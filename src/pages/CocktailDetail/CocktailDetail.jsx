@@ -20,14 +20,13 @@ const CocktailDetail = () => {
         setCocktailDetails(cocktailDetails.drinks[0])
         const tempdetails = cocktailDetails
         const tempDet = tempdetails.drinks[0]
-        
+
         const arrayDetails = Object.values(tempDet)
-        console.log(arrayDetails)
 
         let tempArray = []
         let tempArray2 = []
         for (let i = 1; i < 16; i++) {
-          if (arrayDetails[16+i] === null) {
+          if (arrayDetails[16 + i] === null) {
 
           } else {
 
@@ -35,15 +34,14 @@ const CocktailDetail = () => {
           }
         }
         for (let i = 1; i < 16; i++) {
-          if (arrayDetails[31+i] === null) {
+          if (arrayDetails[31 + i] === null) {
 
           } else {
             tempArray2.push(arrayDetails[31 + i])
           }
         }
-        console.log(tempArray)
+
         setIngredientsArray(tempArray)
-        console.log(tempArray2)
         setAmountsArray(tempArray2)
 
       })
@@ -71,19 +69,19 @@ const CocktailDetail = () => {
                 <>
                   {ingredientsArray.map((ingredient, idx) => (
 
-                  
-                     
-                        <div key={idx} >
-                         {amountsArray[idx]} {ingredient}
-                        </div>
-                      
+
+
+                    <div key={idx} >
+                      {amountsArray[idx]} {ingredient}
+                    </div>
+
 
 
                   ))}
                 </>
                 :
                 <>
-                <h2>loading ingredients</h2>
+                  <h2>loading ingredients</h2>
                 </>
               }
 
