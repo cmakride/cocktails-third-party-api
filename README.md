@@ -1,5 +1,5 @@
 # Cocktail Recipe Finder
-This App was built to be an easy and fast way to lookup cocktail recipes. It connected to a third party API Thecocktaildb.com/
+This App was built to be an easy/fast way to lookup cocktail recipes. It connects to a third party API Thecocktaildb.com/
 
 ## Technologies used
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
