@@ -1,10 +1,12 @@
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CocktailList from './pages/CocktailList/CocktailList';
 import CocktailDetail from './pages/CocktailDetail/CocktailDetail';
 import Search from './components/Search/Search';
 import NavBar from './components/NavBar/NavBar';
 import SearchResults from './components/Search/SearchResults';
+import { searchCocktails, searchOneLetter } from './services/api-calls'
+
 
 function App() {
   const navigate = useNavigate()
@@ -16,10 +18,21 @@ function App() {
   }
 
   const handleSubmitSearch = evt => {
-    setSearchResults({
-      //where will make the API call
-    })
-    navigate('/')
+    let tempQuery = search.query
+
+    if (tempQuery.length === 1) {
+      searchOneLetter(tempQuery)
+        .then(cocktails => setSearchResults(cocktails))
+      console.log(searchResults)
+      navigate('/')
+    }
+    else {
+      searchCocktails(tempQuery)
+        .then(cocktails => setSearchResults(cocktails))
+      console.log(searchResults)
+      navigate('/')
+    }
+
 
   }
 
@@ -27,10 +40,9 @@ function App() {
     <>
       <NavBar />
       <Search search={search} handleSubmitSearch={handleSubmitSearch} handleSetSearch={handleSetSearch} />
+      <SearchResults cocktails={searchResults}/>
       <Routes>
-        <Route path='/' element={
-          <SearchResults cocktails={searchResults}
-          />} />
+        <Route path='/' element={<SearchResults cocktails={searchResults} />} />
         <Route path='/cocktails' element={<CocktailList />} />
         <Route path='cocktail' element={<CocktailDetail />} />
       </Routes>
