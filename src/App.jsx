@@ -19,18 +19,25 @@ function App() {
 
   const handleSubmitSearch = evt => {
     let tempQuery = search.query
+    console.log("TEMPQUERY", tempQuery)
 
-    if (tempQuery.length === 1) {
-      searchOneLetter(tempQuery)
-        .then(cocktails => setSearchResults(cocktails))
-      console.log(searchResults)
-      navigate('/')
-    }
-    else {
-      searchCocktails(tempQuery)
-        .then(cocktails => setSearchResults(cocktails))
-      console.log(searchResults)
-      navigate('/')
+    if (tempQuery) {
+      console.log("EXISTS")
+      if (tempQuery?.length === 1) {
+        searchOneLetter(tempQuery)
+          .then(cocktails => setSearchResults(cocktails))
+        console.log(searchResults)
+        navigate('/')
+      }
+
+      else {
+        searchCocktails(tempQuery)
+          .then(cocktails => setSearchResults(cocktails))
+        console.log(searchResults)
+        navigate('/')
+      }
+    } else {
+
     }
 
 
@@ -40,9 +47,8 @@ function App() {
     <>
       <NavBar />
       <Search search={search} handleSubmitSearch={handleSubmitSearch} handleSetSearch={handleSetSearch} />
-      <SearchResults cocktails={searchResults}/>
       <Routes>
-        <Route path='/' element={<SearchResults cocktails={searchResults} />} />
+        <Route path='/' element={<SearchResults cocktails={searchResults} searchString={search} />} />
         <Route path='/cocktails' element={<CocktailList />} />
         <Route path='cocktail' element={<CocktailDetail />} />
       </Routes>
