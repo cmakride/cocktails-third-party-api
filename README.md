@@ -1,6 +1,8 @@
 # Cocktail Recipe Finder
 This App was created to search Cocktail Recipes. It uses a third party API Thecocktaildb.com/
 
+## [Link to site here](https://cocktail-recipe-finder-search.netlify.app/).
+
 ![CocktailList](./src/assets/readme1.png)
 ![Details](./src/assets/readme2.png)
 
