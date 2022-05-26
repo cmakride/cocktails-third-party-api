@@ -1,5 +1,12 @@
 # Cocktail Recipe Finder
-This App was built to be an easy/fast way to lookup cocktail recipes. It connects to a third party API Thecocktaildb.com/
+This App was created to search Cocktail Recipes. It uses a third party API Thecocktaildb.com/
+
+## How to Use
+To list all cocktails by first letter. Type in that one letter in the search bar.
+
+To search cocktail by name, type in the letters you know are in the recipe you want to find. 
+
+To see the details of a cocktail(ingredients,method,garnish), click on the picture associated with that cocktail.
 
 ## Technologies used
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)

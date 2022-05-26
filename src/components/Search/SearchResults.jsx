@@ -7,10 +7,6 @@ const SearchResults = (props) => {
   const searchValue = props.searchString.query
 
 
-
-
-
-
   return (
 
     searchedCocktailsArray ?
@@ -31,14 +27,17 @@ const SearchResults = (props) => {
       :
       <>
         {searchValue ?
-        <>
-        
-        </>
-        :
-        <>
-          <h4 className="my-8 text-back text-center text-3xl font-bold p-4">Please Enter A Cocktail</h4>
-        </>
-      }
+          <>
+            
+              <h1 className="my-8 text-back text-center text-3xl font-bold p-4">no results</h1>
+              
+
+          </>
+          :
+          <>
+            <h4 className="my-8 text-back text-center text-3xl font-bold p-4">Please Enter A Cocktail</h4>
+          </>
+        }
       </>
 
   );

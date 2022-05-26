@@ -19,28 +19,23 @@ function App() {
 
   const handleSubmitSearch = evt => {
     let tempQuery = search.query
-    console.log("TEMPQUERY", tempQuery)
 
     if (tempQuery) {
-      console.log("EXISTS")
-      if (tempQuery?.length === 1) {
+
+      if (tempQuery.length === 1) {
         searchOneLetter(tempQuery)
           .then(cocktails => setSearchResults(cocktails))
-        console.log(searchResults)
         navigate('/')
       }
 
       else {
         searchCocktails(tempQuery)
           .then(cocktails => setSearchResults(cocktails))
-        console.log(searchResults)
         navigate('/')
       }
     } else {
 
     }
-
-
   }
 
   return (
